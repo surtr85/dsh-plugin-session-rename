@@ -1,0 +1,48 @@
+{
+  "name": "dsh-plugin-session-rename",
+  "version": "1.0.0",
+  "description": "Official DeepSeek Harness plugin enabling agents to autonomously rename sessions/threads",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dsh-plugin",
+    "cordis",
+    "session-rename",
+    "agent-tool"
+  ],
+  "homepage": "https://github.com/surtr85/dsh-plugin-session-rename#readme",
+  "bugs": {
+    "url": "https://github.com/surtr85/dsh-plugin-session-rename/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/surtr85/dsh-plugin-session-rename.git"
+  },
+  "license": "MIT",
+  "author": "Sajjad <surtr85>",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "dsh-rename": "./bin/dsh-rename.mjs"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "engines": {
+      "dsh": ">=0.1.7"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4.0.0",
+    "@deepseek-ai/dsh-session-title": ">=0.1.0",
+    "@deepseek-ai/dsh-tools": ">=0.1.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  }
+}
